@@ -2,7 +2,7 @@ export default function Item({ item }) {
     let { name, quantity, category } = item;
 
     return (
-        <li className="bg-slate-800 text-slate-100 px-4 py-3">
+        <li className="bg-slate-800 text-slate-100 px-4 py-3 mt-2">
             <p className="font-bold">
                 {name}
             </p>
