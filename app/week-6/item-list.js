@@ -14,14 +14,28 @@ export default function ItemList() {
 
     return (
         <div>
-            <button value={"name"} onClick={handleSortChange} className="bg-sky-400 text-slate-800 p-2 hover:bg-sky-500 mr-2">Sort by Name</button>
-            <button value={"category"} onClick={handleSortChange} className="bg-sky-400 text-slate-800 p-2 hover:bg-sky-500">Sort by Category</button>
+            <button
+                value={"name"}
+                onClick={handleSortChange}
+                className="bg-sky-400 text-slate-800 p-2 hover:bg-sky-500 mr-2"
+            >
+                Sort by Name
+            </button>
+            <button
+                value={"category"}
+                onClick={handleSortChange}
+                className="bg-sky-400 text-slate-800 p-2 hover:bg-sky-500"
+            >
+                Sort by Category
+            </button>
             <ul className="w-1/3">
-                {sortBy == "name" ? items.sort((a, b) => a.name.localeCompare(b.name)).map((item) => (
-                    <Item key={item.id} item={item} />
-                )) : items.sort((a, b) => a.category.localeCompare(b.category)).map((item) => (
-                    <Item key={item.id} item={item} />
-                ))}
+                {sortBy == "name"
+                    ? items
+                          .sort((a, b) => a.name.localeCompare(b.name))
+                          .map((item) => <Item key={item.id} item={item} />)
+                    : items
+                          .sort((a, b) => a.category.localeCompare(b.category))
+                          .map((item) => <Item key={item.id} item={item} />)}
             </ul>
         </div>
     );
