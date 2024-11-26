@@ -34,7 +34,7 @@ export default function MealIdeas({ingredient}) {
             <h1 className="font-bold text-2xl">Meal Ideas</h1>
             <ul className="flex gap-2 flex-col">
                 {
-                    meals.length > 0 ? 
+                    meals.length > 0 && ingredient != "" ? 
                     meals.map((meal) => 
                         <li className="bg-slate-800 p-2 hover:bg-orange-800">{meal.strMeal}</li>
                     ) : "There are no meals for the ingredient " + ingredient
